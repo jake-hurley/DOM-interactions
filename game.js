@@ -20,12 +20,14 @@ function bindEventListeners (dots) {
 function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
+  evt.target.classList.remove("blue");
   updateCounts()
 }
 
 // CREATE FUNCTION makeBlue HERE
 function makeBlue(evt) {
   evt.target.classList.toggle("blue");
+  evt.target.classList.remove("green");
   updateCounts()
 }
 
@@ -52,6 +54,8 @@ function displayTotals (totals) {
 
 function hide(evt) {
   evt.target.classList.toggle("invisible");
+  evt.target.classList.remove("green");
+  evt.target.classList.remove("blue");
   updateCounts()
 }
 
